@@ -1,0 +1,30 @@
+<h2>Create book</h2>
+
+<% unless params.valid? %>
+  <div class="errors">
+    <h3>There was a problem with your submission</h3>
+    <ul>
+      <% params.error_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%=
+form_for :task, routes.tasks_path do
+  div class: 'input' do
+    label :name
+    text_field :name
+  end
+
+  div class: 'input' do
+    label :description
+    text_field :description
+  end
+
+  div class: 'controls' do
+    submit 'Create task'
+  end
+end
+%>
