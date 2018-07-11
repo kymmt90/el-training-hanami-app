@@ -1,0 +1,30 @@
+<h2>Update task</h2>
+
+<% unless params.valid? %>
+  <div class="errors">
+    <h3>There was a problem with your submission</h3>
+    <ul>
+      <% params.error_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%=
+form_for :task, routes.task_path(task.id), method: :patch do
+  div class: 'input' do
+    label :name
+    text_field :name, value: task.name
+  end
+
+  div class: 'input' do
+    label :description
+    text_field :description, value: task.description
+  end
+
+  div class: 'controls' do
+    submit 'Update task'
+  end
+end
+%>
