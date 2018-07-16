@@ -1,5 +1,7 @@
 <h2>Tasks</h2>
 
+<%= link_to(routes.new_task_path) { html.button '+' } %>
+
 <% if tasks.any? %>
   <div id="tasks">
     <% tasks.each do |task| %>
