@@ -5,7 +5,7 @@ module Web::Controllers::Tasks
     expose :tasks
 
     def call(params)
-      @tasks = TaskRepository.new.all
+      @tasks = TaskRepository.new.recent.to_a
     end
   end
 end
