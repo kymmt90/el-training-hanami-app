@@ -118,6 +118,7 @@ GEM
     minitest (5.11.3)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
+    pg (1.0.0)
     public_suffix (3.0.2)
     rack (2.0.5)
     rack-test (1.0.0)
@@ -166,6 +167,7 @@ DEPENDENCIES
   hanami-model (~> 1.2)
   hanami-webconsole
   minitest
+  pg
   rake
   shotgun
   sqlite3
