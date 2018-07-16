@@ -4,7 +4,7 @@
   <div id="tasks">
     <% tasks.each do |task| %>
       <div class="task">
-        <h3><%= task.name %></h3>
+        <h3><%= link_to task.name, routes.task_path(task.id) %></h3>
         <p><%= task.description %></p>
         <%=
           form_for :task, routes.task_path(task.id), method: :delete do
